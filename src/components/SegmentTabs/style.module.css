@@ -1,0 +1,69 @@
+
+.SegmentTabs {
+    display: flex;
+    flex-shrink: 0;
+    /* display: flex;
+    justify-content: space-evenly; */
+    width: 100%;
+    height: 36px;
+    padding: 0px 20px;
+    box-sizing: border-box;
+    /* overflow-y: hidden; */
+    /* overflow-x: scroll; */
+}
+
+.SegmentTabs.minimal {
+    padding: 0px 0px;
+}
+
+.tab {
+    position: relative;
+    display: inline-block;
+    /* flex-grow: 1; */
+    text-align: center;
+    cursor: pointer;
+    height: 36px;
+    line-height: 36px;
+    margin-right: 0px;
+    margin-bottom: 12px;
+    opacity: 0.5;
+    color: rgb(51, 51, 51);
+    text-align: center;
+    transition: 0.3s opacity;
+}
+
+.backdrop {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(246, 246, 246, 1.0);
+    border-radius: 10px;
+    opacity: 0.0;
+    transform: scale(0.8);
+    transition: 0.3s transform ease, 0.3s opacity ease;
+}
+
+.content {
+    position: relative;
+    color: rgba(40, 42, 45, 1.0);
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.3s color ease;
+}
+
+.tab.selected {
+    opacity: 1.0;
+    /* color: rgb(255, 255, 255); */
+}
+
+.tab.selected .backdrop {
+    opacity: 1.0;
+    transform: scale(1.0);
+}
+
+.tab.selected .content {
+    /* color: rgb(255, 255, 255); */
+}
+

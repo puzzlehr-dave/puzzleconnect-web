@@ -1,0 +1,71 @@
+
+.ChartView {
+    position: relative;
+}
+
+.chart {
+    position: relative;
+    box-sizing: border-box;
+}
+
+.dotStart {
+    position: absolute;
+    left: 0px;
+}
+
+.dotEnd {
+    position: absolute;
+    right: 0px;
+}
+
+.overlay {
+    display: flex;
+    justify-content: flex-start;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+.info {
+    padding: 12px;
+    height: 50px;
+    border: 1px solid rgba(40, 42, 45, 0.1);
+    background-color: rgb(246, 246, 246);
+    border-radius: 12px;
+}
+
+.segment {
+    flex-grow: 1;
+    padding: 4px;
+    box-sizing: border-box;
+    border-radius: 12px;
+}
+
+.labels {
+    margin-top: 8px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.label {
+    font-size: 14px;
+    font-weight: 600;
+    opacity: 0.7;
+}
+
+.infoTitle {
+    margin-top: 5px;
+    font-size: 17px;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+    color: rgb(40, 42, 45);
+}
+
+.infoDescription {
+    margin-top: 5px;
+    font-size: 13px;
+    font-weight: 600;
+    opacity: 0.7;
+}

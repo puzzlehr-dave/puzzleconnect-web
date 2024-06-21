@@ -1,0 +1,732 @@
+
+.ProfileView {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+    overflow: hidden;
+    opacity: 0.0;
+    transform: translateX(40px);
+    pointer-events: none;
+    transition: 0.2s opacity ease, 0.3s transform ease;
+}
+
+.ProfileView.visible {
+    opacity: 1.0;
+    transform: translateX(0px);
+    pointer-events: auto;
+}
+
+.response {
+    letter-spacing: -0.2px;
+    padding: 12px 0px;
+    box-sizing: border-box;
+    background-color: gray;
+}
+
+.profile {
+    padding: 0px 16px;
+    box-sizing: border-box;
+}
+
+.section {
+    margin-top: 32px;
+    padding: 0px 16px;
+    box-sizing: border-box;
+    width: 100%;
+    /* background-color: aliceblue; */
+}
+
+.sectionTitle {
+    width: 100%;
+    padding: 0px 0px;
+    box-sizing: border-box;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: -0.15px;
+    color: rgb(100, 100, 100);
+    /* text-transform: uppercase; */
+    /* background-color: beige; */
+}
+
+.sectionContent {
+    display: flex;
+    margin-top: 8px;
+    /* height: 160px; */
+    padding: 0px 16px;
+    box-sizing: border-box;
+    overflow: scroll;
+    /* background-color: brown; */
+}
+
+.listContent {
+    margin-top: 6px;
+    padding: 0px 16px;
+    box-sizing: border-box;
+    overflow: scroll;
+}
+
+.sectionContent::-webkit-scrollbar {
+    display: none;
+}
+
+.badgeItem:last-of-type {
+    margin-right: 0px;
+}
+
+.badgeItemIcon {
+    flex-shrink: 0;
+    width: 120px;
+    height: 120px;
+    background-size: 100% 100%;
+    /* background-color: beige; */
+}
+
+.badgeItemPhoto {
+    position: relative;
+    /* margin-top: 5px; */
+    margin-right: 0px; /* 8 indent for nothing */
+    width: 84px;
+    height: 84px;
+    flex-shrink: 0;
+    background-color: rgb(240, 240, 240);
+    box-sizing: border-box;
+    border-radius: 42px;
+    overflow: hidden;
+}
+
+.badgeItemPhoto img {
+    display: block;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+.featuredIcon {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    width: 36px;
+    height: 36px;
+    background-size: 32px 32px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: rgba(122, 193, 66, 1.0);
+    border-radius: 18px;
+    flex-shrink: 0;
+    /* box-shadow: 0px 1.5px 19px rgba(122, 193, 66, 0.206); */
+    margin-top: 4px;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 36px;
+    letter-spacing: -0.5px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+}
+
+.badgeItemName {
+    margin-top: 0px;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 20px;
+    letter-spacing: -0.5px;
+    text-align: center;
+}
+
+.listItem {
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* align-items: center; */
+    height: 100%;
+    display: flex;
+    flex-shrink: 0;
+    margin-right: 16px;
+    /* max-width: 160px; */
+    padding: 10px 0px;
+    box-sizing: border-box;
+    /* background-color: rgb(243, 241, 239); */
+    border-radius: 16px;
+    /* border: 1px solid rgba(128, 128, 128, 0.1); */
+}
+
+.listItemName {
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 44px;
+    letter-spacing: -0.2px;
+}
+
+.listItemPhoto {
+    position: relative;
+    /* margin-top: 5px; */
+    margin-right: 16px; /* 8 indent for nothing */
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+    background-color: rgb(240, 240, 240);
+    box-sizing: border-box;
+    border-radius: 22px;
+    overflow: hidden;
+}
+
+.listItemPhoto img {
+    display: block;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+.actions {
+    display: flex;
+    margin-top: 16px;
+    padding: 0px 16px;
+    box-sizing: border-box;
+}
+
+.action {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 8px;
+    /* width: 100%; */
+    height: 44px;
+    padding: 0px 30px;
+    background-color: rgba(122, 193, 66, 1.0);
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s opacity ease;
+}
+
+.actionSecondary {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 8px;
+    /* width: 100%; */
+    height: 44px;
+    padding: 0px 30px;
+    background-color: rgb(240, 240, 240);
+    border-radius: 22px;
+    color: rgb(40, 42, 45);
+    cursor: pointer;
+    transition: 0.3s opacity ease;
+}
+
+.action:hover {
+    opacity: 0.8;
+}
+
+.actionSecondary:hover {
+    opacity: 0.8;
+}
+
+.actionIcon {
+    position: absolute;
+    top: 10px;
+    left: 16px;
+    width: 30px;
+    height: 30px;
+    background-size: 24px 24px;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: none;
+}
+
+.actionTitle {
+    font-size: 14px;
+    font-weight: 600;
+    /* color: white; */
+}
+
+.item {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 24px 0px;
+    box-sizing: border-box;
+    background-color: gray;
+}
+
+/* .itemPhoto {
+    margin-right: 16px;
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+    background-color: rgba(230, 230, 230, 0.5);
+    border-radius: 18px;
+} */
+
+.itemPhoto {
+    position: relative;
+    /* margin-top: 5px; */
+    margin-right: 16px; /* 8 indent for nothing */
+    width: 120px;
+    height: 120px;
+    flex-shrink: 0;
+    background-color: rgb(240, 240, 240);
+    box-sizing: border-box;
+    border-radius: 60px;
+    overflow: hidden;
+}
+
+.itemPhoto img {
+    display: block;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+.itemName {
+    margin-top: 16px;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 38px;
+    letter-spacing: -1px;
+}
+
+.itemTitle {
+    margin-top: 2px;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 22px;
+    letter-spacing: -0.2px;
+    text-overflow: ellipsis;
+    max-height: 44px;
+    overflow: hidden;
+    color: rgb(128, 128, 128);
+}
+
+.awardItems {
+    width: 100%;
+    padding: 0px 0px;
+    box-sizing: border-box;
+}
+
+.awardItem {
+    padding: 0px 0px;
+    box-sizing: border-box;
+    border-bottom: 0.5px solid rgba(40, 42, 45, 0.1);
+    cursor: pointer;
+}
+
+.awardItem.selected {
+    background-color: rgb(246, 246, 246);
+}
+
+.awardItemContent {
+    display: flex;
+    align-items: center;
+    padding: 16px 0px;
+    /* padding-bottom: 16px; */
+    box-sizing: border-box;
+}
+
+.awardItemPhoto {
+    margin-right: 16px; /* 8 indent for nothing */
+    width: 26px;
+    height: 26px;
+    flex-shrink: 0;
+    box-sizing: border-box;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 26px 26px;
+}
+
+.awardItemInfo {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.awardItemNameContent {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.awardItemName {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 23px;
+    letter-spacing: -0.2px;
+    text-overflow: ellipsis;
+    max-height: 46px;
+    overflow: hidden;
+}
+
+.awardItemDate {
+    flex-shrink: 0;
+    margin-left: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 26px;
+    letter-spacing: -0.1px;
+    color: rgb(128, 128, 128);
+}
+
+.awardItemPreview {
+    margin-top: 2px;
+    margin-bottom: 1px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 22px;
+    letter-spacing: -0.15px;
+    text-overflow: ellipsis;
+    max-height: 44px;
+    overflow: hidden;
+    color: rgb(128, 128, 128);
+}
+
+
+
+
+
+
+.badgeItems {
+    width: 100%;
+}
+
+.badgeItem {
+    width: 100%;
+    padding: 0px 0px;
+    box-sizing: border-box;
+    border-bottom: 0.5px solid rgba(40, 42, 45, 0.1);
+    cursor: pointer;
+}
+
+.badgeItem.selected {
+    background-color: rgb(246, 246, 246);
+}
+
+.badgeItemContent {
+    display: flex;
+    width: 100%;
+    /* align-items: center; */
+    padding: 16px 0px;
+    /* padding-bottom: 16px; */
+    box-sizing: border-box;
+}
+
+.badgeItemPhoto {
+    margin-right: 16px; /* 8 indent for nothing */
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+    box-sizing: border-box;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 26px 26px;
+}
+
+.badgeItemInfo {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.badgeItemNameContent {
+    display: flex;
+    /* justify-content: space-between; */
+    width: 100%;
+}
+
+.badgeItemName {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 23px;
+    letter-spacing: -0.2px;
+    text-overflow: ellipsis;
+    max-height: 46px;
+    overflow: hidden;
+}
+
+.badgeItemDate {
+    flex-shrink: 0;
+    margin-left: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 26px;
+    letter-spacing: -0.1px;
+    color: rgb(128, 128, 128);
+}
+
+.badgeItemPreview {
+    margin-top: 2px;
+    margin-bottom: 1px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 22px;
+    letter-spacing: -0.15px;
+    text-overflow: ellipsis;
+    max-height: 44px;
+    overflow: hidden;
+    color: rgb(128, 128, 128);
+}
+
+
+
+.surveyActions {
+    width: 100%;
+    /* margin-top: 16px; */
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 2px;
+    display: flex;
+    padding: 0px 16px;
+    /* width: 100%;
+    background-color: aliceblue; */
+}
+
+.surveyAction {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 16px;
+    margin-right: 8px;
+    /* width: 100%; */
+    /* height: 44px; */
+    padding: 10px 16px;
+    background-color: transparent;
+    border: 1px solid rgb(240, 240, 240);
+    border-radius: 16px;
+    color: rgba(122, 193, 66, 1.0);
+    /* color: rgba(122, 193, 66, 1.0); */
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 21px;
+    transition: 0.3s opacity ease;
+}
+
+.surveyAction:hover {
+    opacity: 0.8;
+}
+
+
+
+.postItems {
+    padding: 0px 0px;
+    padding-bottom: 6px;
+    box-sizing: border-box;
+}
+
+/* .item {
+    padding: 0px 16px;
+    box-sizing: border-box;
+    border-bottom: 0.5px solid rgba(40, 42, 45, 0.1);
+    cursor: pointer;
+} */
+
+.postItem {
+    /* margin-bottom: 16px; */
+    display: flex;
+    align-items: center;
+    /* padding: 0px 16px; */
+    box-sizing: border-box;
+    /* border-radius: 10px; */
+    background-color: rgb(255, 255, 255);
+    /* background-color: rgb(255, 255, 255); */
+    /* background-color: rgb(229 244 235); */
+    /* box-shadow: 0px 0px 16px rgba(40, 42, 45, 0.05); */
+    /* border: 2.5px solid rgba(116, 87, 246, 1.0); */
+    /* border: 0.5px solid rgb(230, 230, 230); */
+    /* border-bottom: 1px solid rgb(240, 240, 240); */
+    /* border: 0.5px solid rgba(40, 42, 45, 0.1); */
+    cursor: pointer;
+}
+
+.postItem.selected {
+    background-color: rgb(246, 246, 246);
+}
+
+.postItemContent {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    padding: 10px 0px;
+    /* padding-bottom: 16px; */
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.postItemPhoto {
+    position: relative;
+    margin-top: 5px;
+    margin-right: 16px; /* 8 indent for nothing */
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+    background-color: rgba(240, 240, 240, 1.0);
+    box-sizing: border-box;
+    border-radius: 22px;
+    overflow: hidden;
+}
+
+.postItemPhoto img {
+    display: block;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+.postItemInfo {
+    display: flex;
+    width: 100%;
+}
+
+.postItemNameContent {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    width: 100%;
+}
+
+.postItemNameContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.postItemName {
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 28px;
+    letter-spacing: -0.2px;
+}
+
+.postItemDate {
+    flex-shrink: 0;
+    margin-left: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 26px;
+    letter-spacing: -0.1px;
+    color: rgb(128, 128, 128);
+}
+
+.postItemPreview {
+    margin-top: 2px;
+    margin-bottom: 1px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 23px;
+    letter-spacing: -0.15px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    color: rgb(100, 100, 100);
+}
+
+.postItemMedia {
+    margin-top: 16px;
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.postItemMedia img {
+    display: block;
+    width: 100%;
+}
+
+.postItemActions {
+    margin-top: 12px;
+    width: 100%;
+    height: 40px;
+    background-color: gray;
+}
+
+
+
+@media (min-width: 900px) {
+    .ProfileView.secondary {
+        left: 340px;
+        width: calc(100% - 340px);
+        opacity: 1.0;
+        pointer-events: auto;
+        border-left: 0.5px solid rgba(40, 42, 45, 0.1);
+        transform: translateX(0px);
+        transition: none;
+    }
+
+    .item {
+        padding: 0px 24px;
+    }
+
+    .postItems {
+        padding-bottom: 14px;
+    }
+
+    .postItem {
+        /* padding: 0px 24px; */
+    }
+
+    .awardItem {
+        padding: 0px 0px;
+    }
+
+    .badgeItem {
+        padding: 0px 0px;
+    }
+
+    .profile {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+
+    .section {
+        padding: 0px 24px;
+    }
+
+    .surveyActions {
+        padding: 0px 24px;
+    }
+
+    .sectionContent {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+
+    .listContent {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+
+    .actions {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+
+    .badgeItems {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .badgeItem {
+        border-bottom: none;
+    }
+}
+
+@media (min-width: 1400px) {
+    .ProfileView.secondary {
+        left: 420px;
+        width: calc(100% - 420px);
+    }
+
+    .badgeItems {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}

@@ -1,0 +1,520 @@
+
+.SurveyView {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+    overflow: hidden;
+    opacity: 0.0;
+    transform: translateX(40px);
+    pointer-events: none;
+    transition: 0.2s opacity ease, 0.3s transform ease;
+}
+
+.SurveyView.visible {
+    opacity: 1.0;
+    transform: translateX(0px);
+    pointer-events: auto;
+}
+
+.info {
+    display: flex;
+    padding: 0px 16px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+.infoIcon {
+    width: 23px;
+    height: 23px;
+    margin-right: 8px;
+}
+
+.infoText {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 23px;
+    letter-spacing: -0.15px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    color: rgb(128, 128, 128);
+}
+
+.items {
+    /* padding: 0px 16px; */
+    padding-bottom: 6px;
+    box-sizing: border-box;
+}
+
+.item {
+    /* margin-bottom: 16px; */
+    padding: 0px 16px;
+    box-sizing: border-box;
+    /* border-radius: 16px; */
+    /* border: 0.5px solid rgba(40, 42, 45, 0.2); */
+    /* border-bottom: 0.5px solid rgba(40, 42, 45, 0.1); */
+}
+
+.item.selected {
+    background-color: rgba(39, 255, 75, 0.1);
+}
+
+.itemContent {
+    display: flex;
+    padding: 10px 0px;
+    /* padding-bottom: 16px; */
+    box-sizing: border-box;
+}
+
+.itemPhoto {
+    /* display: none; */
+    position: relative;
+    margin-top: 2px;
+    margin-top: 5px;
+    margin-right: 16px; /* 8 indent for nothing */
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+    background-color: rgba(240, 240, 240, 1.0);
+    box-sizing: border-box;
+    border-radius: 22px;
+    overflow: hidden;
+}
+
+.itemPhoto img {
+    display: block;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+.itemInfo {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.itemNameContent {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.itemName {
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 28px;
+    letter-spacing: -0.2px;
+}
+
+.itemDate {
+    flex-shrink: 0;
+    margin-left: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 26px;
+    letter-spacing: -0.1px;
+    color: rgb(128, 128, 128);
+}
+
+.itemPreview {
+    margin-top: 2px;
+    margin-bottom: 1px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 23px;
+    letter-spacing: -0.15px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    color: rgb(100, 100, 100);
+}
+
+.itemInput {
+    display: block;
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 26px;
+    letter-spacing: -0.25px;
+    padding: 12px 16px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    /* text-overflow: ellipsis; */
+    /* max-height: 48px; */
+    overflow: hidden;
+    /* background-color: rgb(246, 246, 246); */
+}
+
+.itemPhoto {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* .item.received .itemPhoto {
+    background-image: url('https://ca.slack-edge.com/T0482CTN7JT-U04M5B2LDC3-c766ea8df6ef-512');
+} */
+
+.newChat {
+    padding: 20px 16px;
+    box-sizing: border-box;
+}
+
+.newChatInput {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.newChatInput textarea {
+    display: block;
+    padding: 10px 0px;
+    box-sizing: border-box;
+    /* width: 100%; */
+    background-color: rgb(240, 240, 240);
+    /* background-color: rgb(13, 151, 237); */
+    /* border: 0.5px solid rgba(40, 42, 45, 0.1); */
+    border-radius: 10px;
+    height: 46px;
+    font-size: 15px;
+    background-color: transparent;
+    resize: none;
+    color: rgba(40, 42, 45, 1.0);
+}
+
+.newChatInput textarea::placeholder {
+    color: rgb(128, 128, 128);
+}
+
+.newChatInput .sendAction {
+    display: block;
+    flex-shrink: 0;
+    margin-left: 10px;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    background-size: 30px 30px;
+    background-position: right;
+    background-repeat: no-repeat;
+    /* background-color: rgba(122, 193, 66, 1.0); */
+}
+
+.newChatInput::placeholder {
+    color: rgba(40, 42, 45, 0.5);
+}
+
+.featured {
+    padding: 0px 16px;
+    margin-bottom: 12px;
+    box-sizing: border-box;
+}
+
+.featuredCard {
+    display: flex;
+    align-items: flex-start;
+    /* background-color: gray; */
+    padding: 16px 16px;
+    box-sizing: border-box;
+    /* background-color: rgb(240, 240, 240); */
+    border: 1px solid rgb(240, 240, 240);
+    border-radius: 16px;
+}
+
+.featuredIcon {
+    margin-top: 5px;
+    width: 36px;
+    height: 36px;
+    background-size: 100% 100%;
+    margin-right: 12px;
+    flex-shrink: 0;
+}
+
+.featuredTitle {
+    margin-top: 5px;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: -0.2px;
+}
+
+.featuredSubtitle {
+    margin-top: 2px;
+    margin-bottom: 1px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 23px;
+    letter-spacing: -0.15px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    color: rgb(128, 128, 128);
+}
+
+.featuredNumber {
+    /* margin-top: 8px; */
+    margin-bottom: 1px;
+    font-size: 23px;
+    font-weight: 500;
+    line-height: 23px;
+    letter-spacing: -0.15px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    color: rgba(122, 193, 66, 1.0);
+}
+
+.sectionContent {
+    display: flex;
+    /* margin-top: 8px; */
+    /* height: 160px; */
+    padding: 0px 16px;
+    box-sizing: border-box;
+    /* overflow: scroll; */
+    /* background-color: brown; */
+}
+
+.table {
+    width: 100%;
+    padding: 0px 20px;
+    /* min-height: 200px; */
+}
+
+.table tr {
+    padding: 20px;
+    border: none;
+    outline: none;
+    border-bottom: 0.5px solid rgba(40, 42, 45, 0.1);
+}
+
+.table th {
+    text-align: left;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 40px;
+    letter-spacing: -0.15px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    color: rgba(128, 128, 128, 1.0);
+}
+
+.table td {
+    /* margin-top: 2px; */
+    /* margin-bottom: 1px; */
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 48px;
+    letter-spacing: -0.15px;
+    text-overflow: ellipsis;
+    /* max-height: 44px; */
+    overflow: hidden;
+    /* color: rgb(128, 128, 128); */
+    color: rgba(40, 42, 45, 1.0);
+}
+
+.surveys {
+    display: none;
+    padding: 0px 16px;
+    margin-bottom: 12px;
+    box-sizing: border-box;
+}
+
+.surveys.visible {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 16px;
+}
+
+.surveyCard {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    /* background-color: gray; */
+    padding: 16px 16px;
+    padding-bottom: 20px;
+    /* padding-right: 8px; */
+    box-sizing: border-box;
+    /* background-color: rgb(246, 246, 246); */
+    border: 1.5px solid rgba(128, 128, 128, 0.1);
+    border-radius: 16px;
+}
+
+.surveyCard.highlighted {
+    border: 1.5px solid rgba(122, 193, 66, 1.0);
+}
+
+.surveyHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.surveyActions {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 2px;
+    display: flex;
+    /* width: 100%;
+    background-color: aliceblue; */
+}
+
+.surveyAction {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 8px;
+    margin-right: 8px;
+    /* width: 100%; */
+    /* height: 44px; */
+    padding: 10px 16px;
+    background-color: transparent;
+    border: 1px solid rgb(240, 240, 240);
+    border-radius: 16px;
+    color: rgba(122, 193, 66, 1.0);
+    /* color: rgba(122, 193, 66, 1.0); */
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 21px;
+    transition: 0.3s opacity ease;
+}
+
+.surveyAction:hover {
+    opacity: 0.8;
+}
+
+.surveyConfirm {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    display: flex;
+}
+
+.surveyConfirmIcon {
+    width: 26px;
+    height: 26px;
+    background-size: 100% 100%;
+}
+
+.surveyConfirmText {
+    margin-left: 8px;
+    margin-top: 0px;
+    margin-bottom: 1px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 26px;
+    letter-spacing: -0.15px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    /* color: rgb(100, 100, 100); */
+}
+
+.indicator {
+    display: none;
+    flex-direction: row;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    /* justify-content: center; */
+    align-items: center;
+    padding: 10px 16px;
+    box-sizing: border-box;
+}
+
+.indicator.visible {
+    display: block;
+}
+
+@media (min-width: 900px) {
+    .SurveyView {
+        left: 340px;
+        width: calc(100% - 340px);
+        opacity: 1.0;
+        pointer-events: auto;
+        border-left: 0.5px solid rgba(40, 42, 45, 0.1);
+        transform: translateX(0px);
+        transition: none;
+    }
+
+    .info {
+        padding: 0px 24px;
+    }
+
+    .items {
+        padding-bottom: 14px;
+    }
+    
+    .item {
+        padding: 0px 24px;
+    }
+
+    .surveys {
+        padding: 0px 24px;
+    }
+
+    .newChat {
+        padding: 20px 24px;
+    }
+
+    .indicator {
+        margin-left: 5px;
+        box-sizing: border-box;
+        padding: 10px 24px;
+    }
+
+    .sectionContent {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+}
+
+@media (min-width: 1400px) {
+    .SurveyView {
+        left: 420px;
+        width: calc(100% - 420px);
+    }
+}
+
+.indicator .indicatorDot {
+    border: 2px solid rgba(122, 193, 66, 1.0);
+    /* background-color: rgba(122, 193, 66, 1.0); */
+}
+
+.indicatorDot {
+    animation: typing 1.5s infinite ease-in-out;
+    border-radius: 5.5px;
+    display: inline-block;
+    height: 11px;
+    margin-right: 5.5px;
+    width: 11px;
+    box-sizing: border-box;
+}
+
+@keyframes typing {
+    0%{
+        -webkit-transform: translateY(0px)
+    }
+    30% {
+        -webkit-transform: translateY(-5px)
+    }
+    50% {
+        -webkit-transform: translateY(0px)
+    }
+}
+
+.indicatorDot:nth-child(1){
+    animation-delay: 200ms;
+}
+
+.indicatorDot:nth-child(2){
+    animation-delay: 300ms;
+}
+
+.indicatorDot:nth-child(3){
+    animation-delay: 400ms;
+}

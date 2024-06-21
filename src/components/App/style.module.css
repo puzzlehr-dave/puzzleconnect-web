@@ -1,0 +1,218 @@
+
+.App {
+    display: none;
+    height: 100vh;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    color: rgb(40, 42, 45);
+    background-color: rgb(255, 255, 255);
+    font-smooth: antialiased;
+}
+
+.App.app {
+    display: block;
+}
+
+.top {
+    display: none;
+    width: 100%;
+    height: 60px;
+    box-sizing: border-box;
+    /* background-color: rgb(246, 246, 246); */
+    /* background-color: rgb(255, 255, 255); */
+    background-color: rgba(122, 193, 66, 0.16);
+    border-bottom: 0.5px solid rgba(40, 42, 45, 0.1);
+}
+
+.organization {
+    display: flex;
+    border: 1px solid rgba(40, 42, 45, 0.1);
+    padding: 5px 12px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.organizationIcon {
+    width: 23px;
+    height: 23px;
+    margin-left: 5px;
+}
+
+.organizationText {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 23px;
+    letter-spacing: -0.15px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    color: rgb(40, 42, 45);
+}
+
+.bottom {
+    width: 100%;
+    height: 60px;
+}
+
+.bottom.keyboard {
+    display: none;
+}
+
+.main {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.navigation {
+    
+}
+
+.content {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.brand {
+    flex-shrink: 0;
+    /* margin-top: 8px; */
+    margin-right: 20px;
+    /* margin-bottom: 16px; */
+    width: 46px;
+    height: 36px;
+    background-repeat: no-repeat;
+}
+
+.roleLinks {
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+    /* justify-content: center; */
+    /* margin-top: 10px; */
+    /* justify-content: space-around; */
+    /* width: 100%; */
+    /* height: 60px; */
+    /* padding: 16px 16px; */
+    box-sizing: border-box;
+}
+
+.roleLink {
+    display: flex;
+    align-items: center;
+    /* flex-shrink: 0; */
+    padding: 10px 10px;
+    box-sizing: border-box;
+    width: 100%;
+    flex-grow: 1;
+    border-radius: 10px;
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+.roleLink.selected {
+    opacity: 1.0;
+    /* background-color: rgb(240, 240, 240); */
+}
+
+.roleIcon {
+    margin-right: 14px;
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    background-size: 24px 24px;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* background-color: gray; */
+}
+
+.roleName {
+    flex-shrink: 0;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 28px;
+    letter-spacing: -0.2px;
+    color: rgb(40, 42, 45);
+}
+
+.account {
+    display: flex;
+    align-items: center;
+    /* padding: 24px 24px; */
+    box-sizing: border-box;
+    /* height: 92px; */
+    cursor: pointer;
+}
+
+.accountPhoto {
+    margin-right: 12px;
+    width: 36px;
+    height: 36px;
+    border-radius: 22px;
+    background-color: rgba(240, 240, 240, 1.0);
+    background-size: cover;
+}
+
+.accountName {
+    font-size: 14px;
+    font-weight: 600;
+    /* line-height: 22px; */
+    letter-spacing: -0.2px;
+    color: rgb(40, 42, 45);    
+}
+
+.accountGroup {
+    margin-top: 5px;
+    font-size: 12px;
+    font-weight: 600;
+    /* line-height: 22px; */
+    letter-spacing: -0.2px;
+    color: rgb(128, 128, 128);
+}
+
+textarea {
+    font-family: 'Poppins', sans-serif;
+    background-color: transparent;
+    color: rgba(47, 47, 47, 1.0);
+    border-bottom: 1px solid rgba(47, 47, 47, 0.08);
+    box-sizing: border-box;
+    border-radius: 0px;
+    appearance: none;
+}
+
+@media (min-width: 900px) {
+    .App {
+        display: block;
+    }
+
+    .top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0px 24px;
+        box-sizing: border-box;
+    }
+
+    .main {
+        height: calc(100% - 60px);
+        /* height: 100%; */
+    }
+
+    .content {
+        left: 76px;
+        width: calc(100% - 76px);
+        border-left: 0.5px solid rgba(40, 42, 45, 0.1);
+    }
+
+    .sidebar {
+        width: 200px;
+        height: 100%;
+    }
+
+    .bottom {
+        display: none;
+    }
+}
