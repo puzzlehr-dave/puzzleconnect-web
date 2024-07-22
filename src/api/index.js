@@ -2,7 +2,7 @@
 import axios from 'axios';
 import bridge from 'bridge-request';
 
-export const url = 'https://api.crm.geekydevelopment.com';
+export const url = 'http://localhost:9898';
 
 let initial = false;
 
